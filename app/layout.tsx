@@ -9,25 +9,19 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Full-Stack Developer | MERN • PHP • Laravel • RAG Chatbot",
+  title: "Full-Stack Developer | Abdul Rehman Asghar",
   description:
     "Professional portfolio of a MERN developer with expertise in WordPress plugins, PHP, Laravel, and RAG-based chatbot development.",
-  generator: "v0.app",
+  generator: "",
   icons: {
+    // use an intentionally blank (transparent) favicon to override any previous "v0" icon
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
+        url: "/blank-favicon.svg",
         type: "image/svg+xml",
       },
     ],
+    // keep apple icon if you still want it available
     apple: "/apple-icon.png",
   },
 }
