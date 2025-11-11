@@ -1,11 +1,42 @@
 "use client"
 
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { useEffect, useState } from "react"
+import { ArrowRight, Github, Linkedin, Mail, Copy, Check } from "lucide-react"
 
 export default function Hero() {
+  const [copied, setCopied] = useState(false)
+  const [open, setOpen] = useState(false)
+  const email = "abdulrehmanbhatti6598@gmail.com"
+
   const scrollToContact = () => {
     const element = document.getElementById("contact")
     element?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    if (!copied) return
+    const t = setTimeout(() => setCopied(false), 2000)
+    return () => clearTimeout(t)
+  }, [copied])
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+    } catch (e) {
+      // Fallback for older browsers
+      const ta = document.createElement("textarea")
+      ta.value = email
+      document.body.appendChild(ta)
+      ta.select()
+      try {
+        document.execCommand("copy")
+        setCopied(true)
+      } catch (_) {
+        // ignore
+      }
+      ta.remove()
+    }
   }
 
   return (
@@ -31,8 +62,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg sm:text-xl text-foreground/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Specialized in MERN stack, PHP, Laravel, WordPress plugin development, and AI-powered chatbots. Let's create
-          something extraordinary together.
+        Core expertise in the MERN stack, with additional experience in PHP, Laravel, WordPress plugin development, and AI-powered chatbots. 
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -52,32 +82,71 @@ export default function Hero() {
         </div>
 
         {/* Social Links */}
-        <div className="flex gap-6 justify-center">
+        <div className="flex gap-6 justify-center items-center">
           <a
-            href="https://github.com"
+            href="https://github.com/SamiRehmanCode"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-lg bg-card hover:bg-card border border-border hover:border-primary/50 text-foreground/60 hover:text-primary transition-all duration-300"
+            className="w-10 h-10 flex items-center justify-center rounded-lg bg-card border border-border hover:border-primary/50 text-foreground/60 hover:text-primary transition-all duration-300"
             aria-label="GitHub"
           >
             <Github size={20} />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/abdulrehman-bhatti-b753b8264/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-lg bg-card hover:bg-card border border-border hover:border-primary/50 text-foreground/60 hover:text-primary transition-all duration-300"
+            className="w-10 h-10 flex items-center justify-center rounded-lg bg-card border border-border hover:border-primary/50 text-foreground/60 hover:text-primary transition-all duration-300"
             aria-label="LinkedIn"
           >
             <Linkedin size={20} />
           </a>
-          <a
-            href="mailto:hello@example.com"
-            className="p-3 rounded-lg bg-card hover:bg-card border border-border hover:border-primary/50 text-foreground/60 hover:text-primary transition-all duration-300"
-            aria-label="Email"
+
+          {/* Email with hover tooltip + copy button */}
+          <div
+            className="relative"
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+            onFocus={() => setOpen(true)}
+            onBlur={() => setOpen(false)}
           >
-            <Mail size={20} />
-          </a>
+            <a
+              href={`mailto:${email}`}
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-card border border-border hover:border-primary/50 text-foreground/60 hover:text-primary transition-all duration-300"
+              aria-label="Email"
+            >
+              <Mail size={20} />
+            </a>
+
+            {/* Top-center tooltip that appears on hover/focus and is interactive */}
+            <div
+              className={
+                "absolute -top-7 left-0 transition-all duration-150 flex items-center gap-2 bg-card/30 border border-border/20 rounded-sm px-2 py-0.5 text-xs backdrop-blur-sm " +
+                (open
+                  ? "opacity-100 pointer-events-auto translate-y-0"
+                  : "opacity-0 pointer-events-none translate-y-1")
+              }
+              role="dialog"
+              aria-hidden={!open}
+            >
+              <button
+                type="button"
+                onClick={copyEmail}
+                className="p-1 rounded hover:bg-primary/10 text-foreground/70"
+                aria-label="Copy email"
+              >
+                {copied ? <Check size={14} className="text-green-500" /> : <Copy size={14} />}
+              </button>
+              <span className="text-xs text-foreground/100">{email}</span>
+            </div>
+
+            {/* transient copy feedback */}
+            {copied && (
+              <div className="absolute top-full right-0 mt-2 text-xs text-green-500 bg-transparent">
+                Email copied
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

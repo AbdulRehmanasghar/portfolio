@@ -4,22 +4,22 @@ export default function Skills() {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"],
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Framer Motion","tanstack Query"],
       icon: "🎨",
     },
     {
       title: "Backend",
-      skills: ["Node.js", "Express", "PHP", "Laravel", "MongoDB", "PostgreSQL"],
+      skills: ["Node.js", "Express", "Nest", "PHP", "Laravel", "MongoDB", "PostgreSQL"],
       icon: "⚙️",
     },
     {
       title: "CMS & Plugins",
-      skills: ["WordPress", "Plugin Development", "WooCommerce", "Custom Themes"],
+      skills: ["WordPress", "Plugin Development", "Headless CMS", "Contentful"],
       icon: "🔌",
     },
     {
-      title: "AI & Advanced",
-      skills: ["RAG Chatbots", "LLM Integration", "Vector DB", "Prompt Engineering"],
+      title: "AI Engineering",
+      skills: ["RAG Chatbots", "LLM Integration", "Vector DB", "Prompt Engineering", "LangChain","MCP Servers",""],
       icon: "🤖",
     },
   ]

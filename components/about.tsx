@@ -22,7 +22,7 @@ export default function About() {
                 and creating intuitive user experiences.
               </p>
               <p className="leading-relaxed">
-                When I'm not coding, I'm exploring new technologies, contributing to open-source projects, or sharing
+                When I'm not coding, I'm exploring new technologies,  or sharing
                 knowledge with the developer community.
               </p>
             </div>
@@ -31,15 +31,15 @@ export default function About() {
           {/* Right Column - Stats */}
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-background/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="text-3xl font-bold text-primary mb-2">2+</div>
               <div className="text-sm text-foreground/60">Years of Experience</div>
             </div>
             <div className="bg-background/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl font-bold text-primary mb-2">20+</div>
               <div className="text-sm text-foreground/60">Projects Completed</div>
             </div>
             <div className="bg-background/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <div className="text-3xl font-bold text-primary mb-2">30+</div>
+              <div className="text-3xl font-bold text-primary mb-2">20+</div>
               <div className="text-sm text-foreground/60">Happy Clients</div>
             </div>
             <div className="bg-background/50 border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">

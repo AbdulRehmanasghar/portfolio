@@ -5,14 +5,14 @@ import { ExternalLink, Github } from "lucide-react"
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "B2B E-Commerce Platform",
       description:
-        "Full-stack MERN application with real-time inventory management, payment gateway integration, and admin dashboard.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+        "Full-stack MERN application with  inventory management,  and laravel admin dashboard.",
+      tags: ["React", "Node.js", "PostgreSQL", "Laravel"],
       image: "/ecommerce-dashboard.jpg",
       links: {
-        github: "#",
-        live: "#",
+        github: "/ecommerce-platform",
+        live: "https://hakiddcreative.com/",
       },
     },
     {
@@ -22,52 +22,30 @@ export default function Projects() {
       tags: ["Next.js", "Python", "Vector DB", "LLMs"],
       image: "/ai-chatbot-interface.jpg",
       links: {
-        github: "#",
-        live: "#",
+        github: "/rag-chatbot",
+        live: "https://ai-assistant-steel-eta.vercel.app/",
       },
     },
     {
       title: "WordPress Plugin Suite",
       description:
-        "Custom WordPress plugins for SEO optimization, performance monitoring, and advanced analytics reporting.",
+        "Custom WordPress plugin for making forms like one in Google Forms.",
       tags: ["PHP", "WordPress", "JavaScript", "MySQL"],
       image: "/wordpress-plugins.jpg",
       links: {
-        github: "#",
-        live: "#",
-      },
-    },
-    {
-      title: "Laravel CMS",
-      description:
-        "Enterprise-level content management system with role-based access control, media management, and SEO tools.",
-      tags: ["Laravel", "Vue.js", "PostgreSQL", "Redis"],
-      image: "/cms-dashboard.jpg",
-      links: {
-        github: "#",
-        live: "#",
-      },
-    },
-    {
-      title: "Real-time Analytics Dashboard",
-      description:
-        "Interactive dashboard with live data visualization, user behavior tracking, and customizable reports.",
-      tags: ["React", "D3.js", "WebSocket", "Node.js"],
-      image: "/analytics-dashboard.png",
-      links: {
-        github: "#",
-        live: "#",
+        github: "/wordpress-plugins",
+        live: "https://github.com/AbdulRehmanasghar/all-in-form-builder-",
       },
     },
     {
       title: "Mobile App Backend",
       description:
         "Scalable RESTful API with JWT authentication, real-time notifications, and cloud storage integration.",
-      tags: ["Express", "PostgreSQL", "Firebase", "JWT"],
+      tags: ["NestJS", "Socket.io", "PostgreSQL", "Firebase", "JWT"],
       image: "/mobile-backend-api.jpg",
       links: {
-        github: "#",
-        live: "#",
+        github: "/mobile-backend",
+        live: "https://github.com/AbdulRehmanasghar/conversationappJS",
       },
     },
   ]
@@ -120,17 +98,42 @@ export default function Projects() {
                 {/* Links */}
                 <div className="flex gap-3 pt-4 border-t border-border">
                   <a
-                    href={project.links.github}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-background hover:bg-background/80 border border-border hover:border-primary/50 text-foreground/70 hover:text-primary rounded-lg transition-colors text-sm font-medium"
+                  href={`/project/${project.links.github
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/(^-|-$)/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-background hover:bg-background/80 border border-border hover:border-primary/50 text-foreground/70 hover:text-primary rounded-lg transition-colors text-sm font-medium"
                   >
-                    <Github size={16} /> Code
+                  Details
                   </a>
+
+                  {(
+                  project.title.toLowerCase().includes("wordpress") ||
+                    project.title.toLowerCase().includes("mobile app backend") ||
+                  project.tags?.some((t) => t.toLowerCase().includes("wordpress")) ||
+                  project.links?.live === "#" ||
+                  project.links?.live === ""
+                  ) ? (
                   <a
                     href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors text-sm font-medium"
+                  >
+                    <Github size={16} /> Github
+                  </a>
+                  ) : (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors text-sm font-medium"
                   >
                     <ExternalLink size={16} /> Live
                   </a>
+                  )}
                 </div>
               </div>
             </div>

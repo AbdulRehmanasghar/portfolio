@@ -11,65 +11,67 @@ export default function ProjectDetail() {
 
   const projects: Record<string, any> = {
     "ecommerce-platform": {
-      title: "E-Commerce MERN Platform",
+      title: "B2B E-Commerce MERN & Laravel Admin Platform",
       description:
-        "Full-stack e-commerce platform with real-time inventory management, Stripe payment integration, and comprehensive admin dashboard.",
+        "Feature enhancement and maintenance phase for a full-stack B2B2 e-commerce admin platform with advanced analytics, statistics, and performance optimization.",
       image: "/ecommerce-dashboard.jpg",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      timeline: "6 months (Jan 2024 - Jun 2024)",
-      role: "Lead Developer",
+      tags: ["React", "Node.js", "MongoDB", "Laravel"],
+      timeline: "Currently Ongoing",
+      role: "Lead Full Stack Developer",
       overview:
-        "Developed a complete e-commerce solution from scratch, handling both frontend and backend development. The platform supports multiple vendors, real-time inventory tracking, secure payment processing, and advanced analytics.",
+        "Joined the project during its late development stage to refine, optimize, and expand functionality. Enhanced the React-based frontend, resolved critical bugs, implemented analytics and statistics modules, and optimized Laravel backend performance.",
       techStack: [
-        "Frontend: React 18, Redux Toolkit, Tailwind CSS, Socket.io for real-time updates",
-        "Backend: Node.js, Express, MongoDB, JWT Authentication",
-        "Infrastructure: AWS S3 for file storage, Stripe API for payments, Redis for caching",
+        "Frontend: React 18, Redux Toolkit, Tailwind CSS",
+        "Backend: Laravel, Node.js, Express, MongoDB",
+        "Infrastructure: AWS S3 for file storage, EC2 for hosting, Redis for caching"
       ],
       techChanges:
-        "Migrated from traditional REST API to GraphQL, reducing API calls by 65% and improving response times. Implemented WebSocket for real-time inventory updates.",
+        "Improved API efficiency, enhanced frontend component structure, and implemented real-time data visualization for analytics pages. Refactored backend endpoints to ensure stable integration between Laravel and MERN modules.",
       challenges: [
-        "Race conditions in inventory management when multiple orders were placed simultaneously - Solved using database transactions and optimistic locking",
-        "Payment processing delays with Stripe - Optimized webhook handling and implemented retry logic",
-        "Performance issues with large product catalogs - Implemented pagination, lazy loading, and Redis caching",
+        "Debugging complex API integration issues between Laravel backend and React frontend",
+        "Improving analytics rendering performance with large datasets",
+        "Ensuring smooth deployment and performance consistency across environments"
       ],
       results: [
-        "Reduced API response time by 60%",
-        "Handled 10,000+ concurrent users without performance degradation",
-        "Processed $500K+ in transactions with 99.9% uptime",
+        "Improved overall platform stability and responsiveness by 40%",
+        "Enhanced user experience through refined UI and faster data visualization",
+        "Successfully delivered analytics and reporting features with real-time data updates"
       ],
       learnings:
-        "This project deepened my understanding of distributed systems, database optimization, and payment gateway integration. Learned best practices for handling concurrent transactions and scaling applications.",
+        "Strengthened expertise in full-stack integration between Laravel and MERN ecosystems. Gained deeper insight into performance tuning, bug tracking, and real-time data handling for enterprise admin applications."
     },
+
     "rag-chatbot": {
       title: "RAG Chatbot Engine",
       description:
-        "Advanced conversational AI with Retrieval-Augmented Generation for context-aware responses from custom documents and knowledge bases.",
+        "Context-aware AI assistant that enables users to interact with OpenAI models without storing any chat history permanently. Designed for real-time, privacy-focused conversational AI with future-proof memory layers.",
       image: "/ai-chatbot-interface.jpg",
       tags: ["Python", "LLMs", "Vector DB", "Next.js", "FastAPI"],
       timeline: "4 months (Jul 2024 - Oct 2024)",
       role: "Full Stack Developer",
       overview:
-        "Built an intelligent chatbot system that combines large language models with vector databases for accurate, context-aware responses. Supports document uploads, multi-language queries, and custom fine-tuning.",
+        "Developed a modern AI assistant interface allowing users to chat with OpenAI models securely, without persistent storage. Created a sleek mobile-first UI, real-time responses, and groundwork for future context-based memory using vector databases.",
       techStack: [
-        "Frontend: Next.js 14, React Components, TailwindCSS",
+        "Frontend: Next.js 14, React Components, TailwindCSS, Mobile-responsive UI",
         "Backend: FastAPI, Python, Langchain for LLM orchestration",
-        "AI: OpenAI GPT-4, Embedding models, ChromaDB/Pinecone for vector storage",
+        "AI: OpenAI GPT-4 API, Embedding models, ChromaDB/Pinecone for future vector-based memory"
       ],
       techChanges:
-        "Implemented semantic search using embeddings instead of keyword matching, improving answer relevance by 85%. Added support for streaming responses for better UX.",
+        "Implemented ephemeral chat storage to ensure privacy, added real-time streaming responses for enhanced UX, and prepared modular architecture to integrate future vector DB memory layers for context-aware conversations.",
       challenges: [
-        "High API costs with LLM providers - Optimized prompts and implemented smart caching to reduce token usage by 40%",
-        "Context length limitations - Developed chunking strategies to split large documents into optimal context windows",
-        "Hallucinations in responses - Implemented source verification and confidence scoring mechanisms",
+        "Preventing any chat data from being stored permanently while maintaining session context",
+        "Ensuring responsive, mobile-friendly UI with real-time streaming from the AI backend",
+        "Designing architecture ready for future RAG memory integration without affecting current UX"
       ],
       results: [
-        "Reduced API latency by 60% through optimization",
-        "Achieved 90% accuracy in answer relevance",
-        "Support for 15+ languages with context preservation",
+        "Delivered a fully functional, privacy-focused AI chat interface",
+        "Achieved smooth real-time responses for user queries",
+        "Built foundation for future context-aware AI using vector databases and memory layers"
       ],
       learnings:
-        "Deep dive into LLM capabilities and limitations. Learned effective prompt engineering, vector search optimization, and building production-ready AI systems.",
+        "Gained practical experience in privacy-focused AI system design, ephemeral session handling, and integrating LLMs with modern web frameworks. Learned best practices for building scalable, context-ready AI interfaces.",
     },
+
     "wordpress-plugins": {
       title: "WordPress Plugin Suite",
       description:
@@ -100,93 +102,100 @@ export default function ProjectDetail() {
       learnings:
         "Gained expertise in WordPress ecosystem, security best practices, and long-term software maintenance. Learned how to manage community feedback and continuous updates.",
     },
-    "laravel-cms": {
-      title: "Laravel Admin CMS",
-      description:
-        "Enterprise-grade content management system with role-based access control, media management, and advanced SEO optimization tools.",
-      image: "/cms-dashboard.jpg",
-      tags: ["Laravel", "Vue.js", "PostgreSQL", "Redis", "Blade"],
-      timeline: "5 months (Feb 2024 - Jun 2024)",
-      role: "Backend Lead",
-      overview:
-        "Architected and developed a scalable CMS for enterprise clients supporting multiple content types, workflows, and user roles. Handles 500K+ page views monthly.",
-      techStack: [
-        "Backend: Laravel 11, PostgreSQL, Redis for caching",
-        "Frontend: Vue 3, Inertia.js for server-side rendering",
-        "APIs: RESTful and GraphQL endpoints for content delivery",
-      ],
-      techChanges:
-        "Implemented Redis caching layer reducing database queries by 70%, improving response times by 40%. Added async job processing with Laravel Queues for heavy operations.",
-      challenges: [
-        "Complex role-based permissions - Built custom authorization middleware with policy-based access control",
-        "Large file uploads - Implemented chunked uploads with resume capability and virus scanning",
-        "High concurrency traffic - Used database connection pooling and query optimization",
-      ],
-      results: [
-        "40% performance improvement with caching strategy",
-        "Support for 500K+ monthly page views",
-        "Admin panel used by 100+ content managers",
-      ],
-      learnings:
-        "Mastered Laravel ecosystem, database design for scalability, and building permission systems. Learned effective team collaboration for backend development.",
-    },
-    "analytics-dashboard": {
-      title: "Real-time Analytics Dashboard",
-      description:
-        "Interactive analytics platform with live WebSocket updates, custom visualizations, and exportable reports for data-driven insights.",
-      image: "/analytics-dashboard.png",
-      tags: ["React", "D3.js", "WebSocket", "Node.js", "PostgreSQL"],
-      timeline: "3 months (Aug 2024 - Oct 2024)",
-      role: "Full Stack Developer",
-      overview:
-        "Built a comprehensive analytics dashboard that processes and visualizes real-time data from multiple sources. Supports custom dashboards, scheduled reports, and data export.",
-      techStack: [
-        "Frontend: React, D3.js, Chart.js for visualizations",
-        "Backend: Node.js Express server with WebSocket support",
-        "Data: PostgreSQL with time-series data optimization",
-      ],
-      techChanges:
-        "Implemented WebSocket connections for live data streaming, reducing update latency from 5s to real-time. Added data aggregation pipelines for efficient querying.",
-      challenges: [
-        "Rendering 100K+ data points without performance degradation - Implemented virtual scrolling and canvas-based rendering",
-        "Memory leaks with WebSocket connections - Proper cleanup and connection pooling",
-        "Complex time-series queries - Optimized with materialized views and caching",
-      ],
-      results: [
-        "Real-time updates with <100ms latency",
-        "Support for 100K+ data points without lag",
-        "3x faster report generation with aggregation",
-      ],
-      learnings:
-        "Advanced data visualization techniques, real-time data handling, and performance optimization for large datasets.",
-    },
+    // "laravel-cms": {
+    //   title: "Laravel Admin CMS",
+    //   description:
+    //     "Enterprise-grade content management system with role-based access control, media management, and advanced SEO optimization tools.",
+    //   image: "/cms-dashboard.jpg",
+    //   tags: ["Laravel", "Vue.js", "PostgreSQL", "Redis", "Blade"],
+    //   timeline: "5 months (Feb 2024 - Jun 2024)",
+    //   role: "Backend Lead",
+    //   overview:
+    //     "Architected and developed a scalable CMS for enterprise clients supporting multiple content types, workflows, and user roles. Handles 500K+ page views monthly.",
+    //   techStack: [
+    //     "Backend: Laravel 11, PostgreSQL, Redis for caching",
+    //     "Frontend: Vue 3, Inertia.js for server-side rendering",
+    //     "APIs: RESTful and GraphQL endpoints for content delivery",
+    //   ],
+    //   techChanges:
+    //     "Implemented Redis caching layer reducing database queries by 70%, improving response times by 40%. Added async job processing with Laravel Queues for heavy operations.",
+    //   challenges: [
+    //     "Complex role-based permissions - Built custom authorization middleware with policy-based access control",
+    //     "Large file uploads - Implemented chunked uploads with resume capability and virus scanning",
+    //     "High concurrency traffic - Used database connection pooling and query optimization",
+    //   ],
+    //   results: [
+    //     "40% performance improvement with caching strategy",
+    //     "Support for 500K+ monthly page views",
+    //     "Admin panel used by 100+ content managers",
+    //   ],
+    //   learnings:
+    //     "Mastered Laravel ecosystem, database design for scalability, and building permission systems. Learned effective team collaboration for backend development.",
+    // },
+    // "analytics-dashboard": {
+    //   title: "Real-time Analytics Dashboard",
+    //   description:
+    //     "Interactive analytics platform with live WebSocket updates, custom visualizations, and exportable reports for data-driven insights.",
+    //   image: "/analytics-dashboard.png",
+    //   tags: ["React", "D3.js", "WebSocket", "Node.js", "PostgreSQL"],
+    //   timeline: "3 months (Aug 2024 - Oct 2024)",
+    //   role: "Full Stack Developer",
+    //   overview:
+    //     "Built a comprehensive analytics dashboard that processes and visualizes real-time data from multiple sources. Supports custom dashboards, scheduled reports, and data export.",
+    //   techStack: [
+    //     "Frontend: React, D3.js, Chart.js for visualizations",
+    //     "Backend: Node.js Express server with WebSocket support",
+    //     "Data: PostgreSQL with time-series data optimization",
+    //   ],
+    //   techChanges:
+    //     "Implemented WebSocket connections for live data streaming, reducing update latency from 5s to real-time. Added data aggregation pipelines for efficient querying.",
+    //   challenges: [
+    //     "Rendering 100K+ data points without performance degradation - Implemented virtual scrolling and canvas-based rendering",
+    //     "Memory leaks with WebSocket connections - Proper cleanup and connection pooling",
+    //     "Complex time-series queries - Optimized with materialized views and caching",
+    //   ],
+    //   results: [
+    //     "Real-time updates with <100ms latency",
+    //     "Support for 100K+ data points without lag",
+    //     "3x faster report generation with aggregation",
+    //   ],
+    //   learnings:
+    //     "Advanced data visualization techniques, real-time data handling, and performance optimization for large datasets.",
+    // },
     "mobile-backend": {
       title: "Mobile App Backend API",
       description:
-        "Scalable RESTful API with JWT authentication, push notifications, and cloud storage integration for mobile applications.",
+        "Scalable RESTful API powering mobile chat functionality with Twilio integration, push notifications via Firebase, JWT authentication, and cloud storage support.",
       image: "/mobile-backend-api.jpg",
-      tags: ["Express", "PostgreSQL", "Firebase", "JWT", "Docker"],
+      tags: ["Express", "PostgreSQL", "Firebase", "Twilio", "JWT", "Docker"],
       timeline: "4 months (Sep 2024 - Dec 2024)",
       role: "API Architect",
       overview:
-        "Designed and implemented a robust backend API serving 50K+ mobile app users with push notifications, user authentication, and social features.",
+        "Designed and implemented a robust backend API for mobile applications, including real-time chat using Twilio, push notifications with Firebase, user authentication, and social features. Supports 50K+ users with scalable architecture.",
       techStack: [
         "Backend: Express.js, Node.js",
         "Database: PostgreSQL with Sequelize ORM",
+        "Chat & Messaging: Twilio Programmable Chat",
+        "Push Notifications: Firebase Cloud Messaging",
         "Authentication: JWT tokens, refresh tokens, OAuth 2.0",
-        "Deployment: Docker, AWS ECS",
+        "Deployment: Docker, AWS ECS"
       ],
       techChanges:
-        "Migrated to microservices architecture for better scalability. Implemented API versioning and rate limiting for security.",
+        "Added Twilio-based real-time chat module, integrated Firebase push notifications, and implemented API versioning, rate limiting, and scalable architecture for high concurrency.",
       challenges: [
-        "Authentication across devices - Implemented refresh token rotation and device tracking",
-        "Push notification delivery reliability - Added retry logic and fallback mechanisms",
-        "API rate limiting and DDoS protection - Implemented throttling and IP-based blocking",
+        "Ensuring reliable message delivery and synchronization across devices via Twilio",
+        "Push notification reliability and handling offline devices with Firebase",
+        "Secure authentication and token management across multiple devices"
       ],
-      results: ["Serving 50K+ daily active users", "99.9% API uptime", "Average response time <200ms"],
+      results: [
+        "Successfully serving 50K+ daily active users",
+        "Real-time chat and notifications delivered with 99.9% reliability",
+        "Average API response time <200ms with high concurrency handling"
+      ],
       learnings:
-        "Mobile backend best practices, security implementation, and scaling strategies for high-traffic APIs.",
+        "Deepened expertise in mobile backend architecture, real-time chat integration, push notifications, and scalable API design for high-traffic mobile applications."
     },
+
   }
 
   const project = projects[projectId]
